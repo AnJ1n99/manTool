@@ -106,55 +106,6 @@ man-cn/
 └── examples/         # 使用示例
 ```
 
-## 技术原理
-
-### 内容处理流程
-
-1. **获取原始内容**: 调用系统`man`命令获取英文手册页
-2. **智能分段**: 将内容按段落分割，识别代码和格式化内容
-3. **选择性翻译**: 只翻译描述性文本，保留代码、选项等原文
-4. **本地缓存**: 翻译结果保存到本地，下次直接读取
-5. **格式还原**: 维持原始手册页的排版格式
-
-### 缓存机制
-
-- 缓存目录: `~/.man_cn_cache/`
-- 缓存格式: JSON文件，包含原文、译文、时间戳等信息
-- 过期时间: 7天（可配置）
-- 缓存键: 基于命令名和节号的MD5哈希
-
-### 翻译策略
-
-保留以下内容不翻译：
-- 命令选项（如`-l`, `--help`）
-- 函数调用（如`fork(2)`）
-- 代码示例和注释
-- 环境变量和路径
-- 结构体定义
-
-## 贡献指南
-
-欢迎贡献代码！请遵循以下步骤：
-
-1. Fork 这个项目
-2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交更改 (`git commit -m 'Add amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 创建 Pull Request
-
-### 开发环境设置
-
-```bash
-# 克隆你的fork
-git clone https://github.com/your-username/man-cn.git
-cd man-cn
-
-# 安装开发依赖
-pip install -r requirements.txt
-
-# 运行测试
-python -m pytest tests/
-```
 
 ## 常见问题
 
@@ -176,13 +127,11 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 致谢
 
-- 感谢所有翻译API提供商
-- 感谢Linux社区维护的优秀文档
-- 感谢所有贡献者的努力
+- Author-Claude-sonnet-4.0
 
 ## 更新日志
 
-### v1.0.0 (2025-06-20)
+### v1.0.0 
 - 初始版本发布
 - 支持基本翻译功能
 - 实现本地缓存机制
